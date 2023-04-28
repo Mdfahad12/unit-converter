@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Unit converter</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="https://cdn4.vectorstock.com/i/1000x1000/22/33/yellow-gold-alphabet-letter-u-logo-company-icon-vector-26622233.jpg" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+
+    <link href="{{ asset('vendor/aos/aos.cs') }}" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html" style="color: rgb(72, 107, 179);">Unit converter</a></h1>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+        </div>
+    </header>
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="header-hero-content">
+                                <h1 class="hero-title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
+                                    <b
+                                        style="color: rgb(94, 94, 129);">Websites</b> <span
+                                        style="color: rgb(101, 155, 175);"> For Unit Conversions </span> & <b
+                                        style="color: rgb(175, 101, 101);">Calculations</b></h1>
+
+                                <div class=" converter col-lg-8 align-items-center mt-4">
+                                    <button id="Length-btn" class="btn btn btn-outline-dark ml-2 ">Length</button>
+                                    <button id="Temprature-btn"
+                                        class="btn btn btn-outline-dark ml-2">Temprature</button>
+                                    <button id="Area-btn" class="btn btn btn-outline-dark ml-2">Area</button>
+                                    <button id="Volume-btn" class="btn btn btn-outline-dark ml-2">Volume</button>
+                                    <button id="Weight-btn" class="btn btn btn-outline-dark ml-2">Weight</button>
+                                    <button id="Time-btn" class="btn btn btn-outline-dark ml-2">Time</button>
+                                </div>
+
+
+                                <!-- Length -->
+
+                                <div id="length" class="converter col-lg-8 ">
+                                    <h2 style="color: rgb(136, 22, 41);">Length</h2>
+                                    <hr>
+                                    <div>
+                                        <label for="input"><strong>Input:</strong></label>
+                                        <input type="number" id="input">
+                                    </div>
+                                    <select class="selectpicker" data-style="btn-info" id="inputUnit">
+                                        <option value="cm">cm</option>
+                                        <option value="m">m</option>
+                                        <option value="km">km</option>
+                                        <option value="in">in</option>
+                                        <option value="ft">ft</option>
+                                        <option value="yd">yd</option>
+                                        <option value="mi">mi</option>
+                                    </select>
+
+                                    <strong>To</strong>
+                                    <select class="selectpicker" data-style="btn-info" id="outputUnit">
+                                        <option value="cm">cm</option>
+                                        <option value="m"> m </option>
+                                        <option value="km">km</option>
+                                        <option value="in">in</option>
+                                        <option value="ft">ft</option>
+                                        <option value="yd">yd</option>
+                                        <option value="mi">mi</option>
+                                    </select>
+                                    <div>
+                                        <label for="output">Output:</label>
+                                        <input type="number" id="output" disabled>
+                                    </div>
+                                    <br />
+                                    <button class="btn btn-primary mt-4" onclick="convert()">Convert</button>
+                                </div>
+                                <div id="Temprature" class="converter col-lg-5 " style="display: none;">
+                                    <h2 style="color: rgb(101, 131, 175);">Temprature</h2>
+                                    <hr>
+                                    <div>
+                                        <label for="input"><strong>Input:</strong></label>
+                                        <input type="number" id="temp_input">
+                                    </div>
+                                    <select class="selectpicker" data-style="btn-info" id="temp_inputUnit">
+                                        <option value="cel">celsius</option>
+                                        <option value="kel">kelvin</option>
+                                        <option value="f">faherenhite</option>
+
+                                    </select>
+                                    <strong>To</strong>
+                                    <select class="selectpicker" data-style="btn-info" id="temp_outputUnit">
+                                        <option value="cel">celsius</option>
+                                        <option value="kel">kelvin</option>
+                                        <option value="f">faherenhite</option>
+
+                                    </select>
+                                    <div>
+                                        <label for="output">Output:</label>
+                                        <input type="number" id="temp_output" disabled>
+                                    </div>
+                                    <br />
+                                    <button class="btn btn-primary mt-4" onclick="convert_temp()">Convert</button>
+                                </div>
+                                <div id="area" class="converter col-lg-10 " style="display: none;">
+                                    <h2>Area</h2>
+                                    <hr>
+                                    <div>
+                                        <label for="input"><strong>Input:</strong></label>
+                                        <input type="number" id="input_area">
+                                    </div>
+                                    <select class="selectpicker" data-style="btn-info" id="inputUnit_area">
+                                        <option value="sqm">square meter</option>
+                                        <option value="sqkm">square Kelometer</option>
+                                        <option value="sqcm">square centimeter</option>
+                                        <option value="sqmm">square milimeter</option>
+                                        <option value="sqmicm">square micrometer</option>
+                                        <option value="hec">hectare</option>
+                                        <option value="sqmile">square mile</option>
+                                        <option value="sqyd">square yard</option>
+                                        <option value="sqft">square foot</option>
+                                        <option value="sqin">square inch</option>
+                                        <option value="acre">square area</option>
+                                    </select>
+
+                                    <strong>To</strong>
+                                    <select class="selectpicker" data-style="btn-info" id="outputUnit_area">
+                                        <option value="sqm">square meter</option>
+                                        <option value="sqkm">square Kelometer</option>
+                                        <option value="sqcm">square centimeter</option>
+                                        <option value="sqmm">square milimeter</option>
+                                        <option value="sqmicm">square micrometer</option>
+                                        <option value="hec">hectare</option>
+                                        <option value="sqmile">square mile</option>
+                                        <option value="sqyd">square yard</option>
+                                        <option value="sqft">square foot</option>
+                                        <option value="sqin">square inch</option>
+                                        <option value="acre">acre</option>
+                                    </select>
+                                    <div>
+                                        <label for="output">Output:</label>
+                                        <input type="number" id="output_area" disabled>
+                                    </div>
+                                    <br />
+                                    <button class="btn btn-primary mt-4" onclick="convert_area()">Convert</button>
+                                </div>
+                                <div id="Volume" class="converter col-lg-10 " style="display: none;">
+                                    <h2 style="color: rgb(70, 50, 121);">Volume</h2>
+                                    <hr>
+                                    <div>
+                                        <label for="input"><strong>Input:</strong></label>
+                                        <input type="number" id="input_volume">
+                                    </div>
+                                    <select class="selectpicker" data-style="btn-info" id="inputUnit_volume">
+                                        <option value="cubm">Cubic Meter</option>
+                                        <option value="cubkm">Cubic Kilometer</option>
+                                        <option value="cubcm">Cubic Centimter</option>
+                                        <option value="cubmm">Cubic Millimeter</option>
+                                        <option value="lit">Liter </option>
+                                        <option value="mlit">Milliliter</option>
+
+                                    </select>
+                                    <strong>To</strong>
+                                    <select class="selectpicker" data-style="btn-info" id="outputUnit_volume">
+                                        <option value="cubm">Cubic Meter</option>
+                                        <option value="cubkm">Cubic Kilometer</option>
+                                        <option value="cubcm">Cubic Centimter</option>
+                                        <option value="cubmm">Cubic Millimeter</option>
+                                        <option value="lit">Liter </option>
+                                        <option value="mlit">Milliliter</option>
+                                    </select>
+                                    <div>
+                                        <label for="output">Output:</label>
+                                        <input type="number" id="output_volume" disabled>
+                                    </div>
+                                    <br />
+                                    <button class="btn btn-primary mt-4" onclick="convert_volume()">Convert</button>
+                                </div>
+                                <div id="Weight" class="converter col-lg-10 " style="display: none;">
+                                    <h2 style="color: rgb(26, 232, 222);">weight</h2>
+                                    <hr>
+                                    <div>
+                                        <label for="input"><strong>Input:</strong></label>
+                                        <input type="number" id="input_weight">
+                                    </div>
+                                    <select class="selectpicker" data-style="btn-info" id="inputUnit_weight">
+                                        <<option value="kg">Kilogram</option>
+                                            <option value="gm">Gram</option>
+                                            <option value="miligm">Milligram</option>
+                                            <option value="mt">Metric Ton</option>
+                                            <option value="lt">Long Ton</option>
+                                            <option value="st">Short Ton</option>
+                                            <option value="p">Pound</option>
+                                            <option value="oun">Ounce</option>
+                                            <option value="car">Carrat</option>
+                                            <option value="amu">Atomic Mass Unit</option>
+
+                                    </select>
+
+                                    <strong>To</strong>
+                                    <select class="selectpicker" data-style="btn-info" id="outputUnit_weight">
+                                        <option value="kg">Kilogram</option>
+                                        <option value="gm">Gram</option>
+                                        <option value="miligm">Milligram</option>
+                                        <option value="mt">Metric Ton</option>
+                                        <option value="lt">Long Ton</option>
+                                        <option value="st">Short Ton</option>
+                                        <option value="p">Pound</option>
+                                        <option value="oun">Ounce</option>
+                                        <option value="car">Carrat</option>
+                                        <option value="amu">Atomic Mass Unit</option>
+                                    </select>
+                                    <div>
+                                        <label for="output">Output:</label>
+                                        <input type="number" id="output_weight" disabled>
+                                    </div>
+                                    <br />
+                                    <button class="btn btn-primary mt-4" onclick="convert_weight()">Convert</button>
+                                </div>
+                                <div id="Time" class="converter col-lg-10 " style="display: none;">
+                                    <h2 style="color: rgb(218, 28, 28);">Time</h2>
+                                    <hr>
+                                    <div>
+                                        <label for="input"><strong>Input:</strong></label>
+                                        <input type="number" id="input_time">
+                                    </div>
+                                    <select class="selectpicker" data-style="btn-primary" id="inputUnit_time">
+                                        <option value="sec">Second</option>
+                                        <option value="milsec">MIllisecond</option>
+                                        <option value="micsec">Microsecond</option>
+                                        <option value="nansec">Nanosecond</option>
+                                        <option value="picsec">Picosecond</option>
+                                        <option value="min">Minute</option>
+                                        <option value="hr">Hour</option>
+                                        <option value="dy">Day</option>
+                                        <option value="wk">Week</option>
+                                        <option value="mt">Month</option>
+                                        <option value="yr">Year</option>
+                                    </select>
+
+                                    <strong>To</strong>
+                                    <select class="selectpicker" data-style="btn-info" id="outputUnit_time">
+                                        <option value="sec">Second</option>
+                                        <option value="milsec">MIllisecond</option>
+                                        <option value="micsec">Microsecond</option>
+                                        <option value="nansec">Nanosecond</option>
+                                        <option value="picsec">Picosecond</option>
+                                        <option value="min">Minute</option>
+                                        <option value="hr">Hour</option>
+                                        <option value="dy">Day</option>
+                                        <option value="wk">Week</option>
+                                        <option value="mt">Month</option>
+                                        <option value="yr">Year</option>
+                                    </select>
+                                    <div>
+                                        <label for="output">Output:</label>
+                                        <input type="number" id="output_time" disabled>
+                                    </div>
+                                    <br />
+                                    <button class="btn btn-primary mt-4" onclick="convert_time()">Convert</button>
+                                </div>
+
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </section>
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
